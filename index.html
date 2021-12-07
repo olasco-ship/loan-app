@@ -88,6 +88,8 @@
         </div>
          
         <div class="animate-switch" ng-switch-when="stage4">
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
           <div class="form-group">
             <label for="ta-body">Loan Amount:</label>
             <input type="text" class="form-control" id="tb-loanamount" name="loanamount" ng-maxlength="7" ng-model="formParams.loanamount" ng-class="{'input-error': formValidation && loanApp.loanamount.$error.required}" required>
@@ -97,12 +99,16 @@
                 <span ng-show="loanApp.loanamount.$error.maxlength">
                   Max character length reached.
                 </span>
+            </div>
+              </div>
+            </div>
           <button type="button" style="background-color: #f35b1c" ng-click="back('stage3')">Back</button>
           <button type="button" style="background-color: #f35b1c" ng-click="next('stage5')">Next</button>
-        </div>
       </div>
 
        <div class="animate-switch" ng-switch-when="stage5">
+         <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
           <div class="form-group">
             <label for="ta-body">Loan duration:</label>
             <input type="text" class="form-control" id="tb-loanduration" name="loanduration" ng-maxlength="2" ng-model="formParams.loanduration" ng-class="{'input-error': formValidation && loanApp.loanduration.$error.required}" required>
@@ -112,9 +118,11 @@
                 <span ng-show="loanApp.loanduration.$error.maxlength">
                   Max character length reached.
                 </span>
+            </div>
+              </div>
+           </div>
           <button type="button" style="background-color: #f35b1c" ng-click="back('stage4')">Back</button>
           <button type="button" style="background-color: #f35b1c" ng-click="next('stage6')">Next</button>
-        </div>
       </div>
         <div class="animate-switch" ng-switch-when="stage6">
           <h2>Summary</h2>
