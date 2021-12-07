@@ -15,7 +15,7 @@
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h2>Welcome to Swedbank loan Platform</h1>
+        <h2>Welcome to <span style="color: #f35b1c">Swedbank loan</span> Application</h1>
       </div>
     </div>
     <form name="loanApp" class="form-validation" role="form" novalidate>
@@ -23,8 +23,15 @@
         <div class="animate-switch" ng-switch-default>
           <div class="row">
             <div class="col-md-12">
-              <p>Apply for Swedbank small loan today. Designed by Adenola Uthman</p>
-              <button type="button" class="btn btn-primary" ng-click="next('stage1')">Click here to begin the form</button>
+              <h3>Apply for <span style="color: #f35b1c" >Swedbank Home small loan</span> today. Designed by Adenola Uthman</h3>
+              <p>A simple solution if you’re looking to buy a property or undertake your home renovation.</p>
+              <ul class="regular">
+               <li>Loan amount $2000-99000</li>
+               <li>Annual interest rate from 7,9 percent.</li>
+               <li>No mortgage placed on real estate.</li>
+               <li>No down payment required.</li>
+             </ul>
+             <h3> <button type="button" style="background-color: #f35b1c" ng-click="next('stage1')">Click here to begin the form</button></h3>
             </div>
           </div>
         </div>
@@ -40,8 +47,8 @@
               </div>
             </div>
           </div>
-          <button type="button" class="btn btn-danger" ng-click="back('')">Back</button>
-          <button type="button" class="btn btn-primary" ng-click="next('stage2')">Next</button>
+          <button type="button" style="background-color: #f35b1c" ng-click="back('')">Back</button>
+          <button type="button" style="background-color: #f35b1c" ng-click="next('stage2')">Next</button>
         </div>
 
             <div class="animate-switch" ng-switch-when="stage2">
@@ -56,8 +63,8 @@
               </div>
             </div>
           </div>
-          <button type="button" class="btn btn-danger" ng-click="back('stage1')">Back</button>
-          <button type="button" class="btn btn-primary" ng-click="next('stage3')">Next</button>
+          <button type="button" style="background-color: #f35b1c" ng-click="back('stage1')">Back</button>
+          <button type="button" style="background-color: #f35b1c" ng-click="next('stage3')">Next</button>
         </div>
 
 
@@ -76,8 +83,8 @@
               </div>
             </div>
           </div>
-          <button type="button" class="btn btn-danger" ng-click="back('stage2')">Back</button>
-          <button type="button" class="btn btn-primary" ng-click="next('stage4')">Next</button>
+          <button type="button" style="background-color: #f35b1c" ng-click="back('stage2')">Back</button>
+          <button type="button" style="background-color: #f35b1c" ng-click="next('stage4')">Next</button>
         </div>
          
         <div class="animate-switch" ng-switch-when="stage4">
@@ -90,8 +97,8 @@
                 <span ng-show="loanApp.loanamount.$error.maxlength">
                   Max character length reached.
                 </span>
-          <button type="button" class="btn btn-danger" ng-click="back('stage3')">Back</button>
-          <button type="button" class="btn btn-primary" ng-click="next('stage5')">Next</button>
+          <button type="button" style="background-color: #f35b1c" ng-click="back('stage3')">Back</button>
+          <button type="button" style="background-color: #f35b1c" ng-click="next('stage5')">Next</button>
         </div>
       </div>
 
@@ -105,8 +112,8 @@
                 <span ng-show="loanApp.loanduration.$error.maxlength">
                   Max character length reached.
                 </span>
-          <button type="button" class="btn btn-danger" ng-click="back('stage4')">Back</button>
-          <button type="button" class="btn btn-primary" ng-click="next('stage6')">Next</button>
+          <button type="button" style="background-color: #f35b1c" ng-click="back('stage4')">Back</button>
+          <button type="button" style="background-color: #f35b1c" ng-click="next('stage6')">Next</button>
         </div>
       </div>
         <div class="animate-switch" ng-switch-when="stage6">
@@ -117,7 +124,7 @@
           <p>Email: {{formParams.email}}</p>
           <p>Loan amount: ${{formParams.loanamount}}</p>
           <p>Loan duration: {{formParams.loanduration}}months</p>
-          <button type="button" class="btn btn-danger" ng-click="back('stage4')">Back</button>
+          <button type="button" style="background-color: #f35b1c" ng-click="back('stage4')">Back</button>
         </div>
       </div>
         
@@ -132,3 +139,4 @@
 
 </body>
 </html>
+
