@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>loan Application form from Adenola Uthman</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<main ng-app="loanApp" ng-controller="formCtrl" ng-cloak>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h2>Welcome to Swedbank loan Platform</h1>
+      </div>
+    </div>
+    <form name="loanApp" class="form-validation" role="form" novalidate>
+      <div class="animate-switch-container" ng-switch on="stage" ng-class="{forward: direction, backward:!direction}">
+        <div class="animate-switch" ng-switch-default>
+          <div class="row">
+            <div class="col-md-12">
+              <p>Apply for Swedbank small loan today. Designed by Adenola Uthman</p>
+              <button type="button" class="btn btn-primary" ng-click="next('stage1')">Click here to begin the form</button>
+            </div>
+          </div>
+        </div>
+        <div class="animate-switch" ng-switch-when="stage1">
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="form-group">
+                <label for="tb-fname">First Name:</label>
+                <input type="text" class="form-control" id="tb-fname" name="firstName" ng-maxlength="17" ng-model="formParams.firstName" required ng-class="{'input-error': formValidation && loanApp.firstName.$error.required}" >
+                <span ng-show="loanApp.firstName.$error.maxlength">
+                  Max character length reached.
+                </span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-danger" ng-click="back('')">Back</button>
+          <button type="button" class="btn btn-primary" ng-click="next('stage2')">Next</button>
+        </div>
+
+            <div class="animate-switch" ng-switch-when="stage2">
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="form-group">
+                <label for="tb-lname">Last Name:</label>
+                <input type="text" class="form-control" id="tb-lname" name="lastName" ng-maxlength="17" ng-model="formParams.lastName" ng-class="{'input-error': formValidation && loanApp.lastName.$error.required}" required>
+                <span ng-show="loanApp.lastName.$error.maxlength">
+                  Max character length reached.
+                </span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-danger" ng-click="back('stage1')">Back</button>
+          <button type="button" class="btn btn-primary" ng-click="next('stage3')">Next</button>
+        </div>
+
+
+          <div class="animate-switch" ng-switch-when="stage3">
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="form-group">
+                <label for="tb-email">Email:</label>
+                <input type="email" class="form-control" id="tb-email" name="email" ng-maxlength="100" ng-model="formParams.email" ng-class="{'input-error': formValidation && loanApp.email.$error.required}" ng-model-options="{ updateOn: 'blur' }" required>
+                <span ng-show="loanApp.email.$error.email">
+                  Incorrect email format.
+                </span>
+                <span ng-show="loanApp.email.$error.maxlength">
+                  Max character length reached.
+                </span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-danger" ng-click="back('stage2')">Back</button>
+          <button type="button" class="btn btn-primary" ng-click="next('stage4')">Next</button>
+        </div>
+         
+        <div class="animate-switch" ng-switch-when="stage4">
+          <div class="form-group">
+            <label for="ta-body">Loan Amount:</label>
+            <input type="text" class="form-control" id="tb-loanamount" name="loanamount" ng-maxlength="7" ng-model="formParams.loanamount" ng-class="{'input-error': formValidation && loanApp.loanamount.$error.required}" required>
+                <span ng-show="loanApp.loanamount.$error.loanamount">
+                  Incorrect loan format.
+                </span>
+                <span ng-show="loanApp.loanamount.$error.maxlength">
+                  Max character length reached.
+                </span>
+          <button type="button" class="btn btn-danger" ng-click="back('stage3')">Back</button>
+          <button type="button" class="btn btn-primary" ng-click="next('stage5')">Next</button>
+        </div>
+      </div>
+
+       <div class="animate-switch" ng-switch-when="stage5">
+          <div class="form-group">
+            <label for="ta-body">Loan duration:</label>
+            <input type="text" class="form-control" id="tb-loanduration" name="loanduration" ng-maxlength="2" ng-model="formParams.loanduration" ng-class="{'input-error': formValidation && loanApp.loanduration.$error.required}" required>
+                <span ng-show="loanApp.loanduration.$error.loanduration">
+                  Incorrect duration format.
+                </span>
+                <span ng-show="loanApp.loanduration.$error.maxlength">
+                  Max character length reached.
+                </span>
+          <button type="button" class="btn btn-danger" ng-click="back('stage4')">Back</button>
+          <button type="button" class="btn btn-primary" ng-click="next('stage6')">Next</button>
+        </div>
+      </div>
+        <div class="animate-switch" ng-switch-when="stage6">
+          <h2>Summary</h2>
+          <hr>
+          <p>First name: {{formParams.firstName}}</p>
+          <p>Last name: {{formParams.lastName}}</p>
+          <p>Email: {{formParams.email}}</p>
+          <p>Loan amount: ${{formParams.loanamount}}</p>
+          <p>Loan duration: {{formParams.loanduration}}months</p>
+          <button type="button" class="btn btn-danger" ng-click="back('stage4')">Back</button>
+        </div>
+      </div>
+        
+    </form>
+    
+  </div>
+</main>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-animate.min.js'></script>
+<script src="./script.js"></script>
+
+</body>
+</html>
